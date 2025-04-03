@@ -14,10 +14,13 @@ if (!token) {
     console.error('No JWT token provided!');
     process.exit(1); // Exit the process with a non-zero status code
 }
+
 const output = fs.createWriteStream('zipped_file.zip');
 const archive = archiver('zip', {
     zlib: { level: 9 } // Set compression level, higher the compression level, lower the size
 });
+
+const zipFilePath = 'zipped_file.zip';
 
 archive.on('error', (err) => {
     if (fs.existsSync(zipFilePath)) {
@@ -45,8 +48,7 @@ files.forEach((file) => {
 // Finalize the archive and listen for completion
 archive.finalize();
 
-const zipFilePath = 'zipped_file.zip';
-const maxSizeAllowed = 50 * 1024 * 1024; // 20MB in bytes
+const maxSizeAllowed = 50 * 1024 * 1024; // 50MB in bytes
 output.on('close', async () => {
     console.log('Zip file created successfully');
     const stats = fs.statSync('zipped_file.zip');
