@@ -23,12 +23,12 @@ button {
   color: #fff;
 }
 
+button.dark {
+  background-color: #fff;
+  color: #000;
+}
+
 div .dark {
   background-color: #2b2d42;
   color: #fff;
-}
-
-.dark button {
-  background-color: #fff;
-  color: #000;
 }
