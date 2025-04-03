@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       theme: "light"
     };
@@ -35,5 +36,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  // Define any props here if required
+};
 
 export default App;
