@@ -1,8 +1,8 @@
 {
   "name": "create-react-app-with-tests",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "A React project with testing setup",
+  "keywords": ["react", "testing", "jest"],
   "main": "src/index.js",
   "custom-reporter": {
     "type": "module"
@@ -32,7 +32,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false '--testResultsProcessor=<rootDir>/custom-reporter' '--silent' '--maxWorkers=2' ./",
+    "test": "react-scripts test --watchAll=false --testResultsProcessor='<rootDir>/custom-reporter' --silent --maxWorkers=2 ./",
     "eject": "react-scripts eject"
   },
   "browserslist": [
